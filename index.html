@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng 8/3/2026 - Bó hoa diệu kỳ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0f1e 0%, #1a1b3a 50%, #2d1b3a 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng tuyết rơi và sao băng */
+        .snowflake {
+            position: fixed;
+            color: rgba(255, 255, 255, 0.6);
+            user-select: none;
+            pointer-events: none;
+            font-size: 1.5rem;
+            animation: fall 10s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-100vh) rotate(0deg);
+            }
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* Hiệu ứng lấp lánh */
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: white;
+            pointer-events: none;
+            animation: sparkle 3s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .card {
+            max-width: 1300px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 80px 80px 50px 50px;
+            padding: 50px 30px 40px;
+            box-shadow: 0 40px 60px rgba(0, 0, 0, 0.6),
+                        0 0 0 3px rgba(255, 215, 0, 0.2) inset,
+                        0 0 50px rgba(255, 192, 203, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(135deg, #fff9e6, #ffdab9, #ffe4b5, #ffb6c1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 182, 193, 0.7);
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { text-shadow: 0 0 30px rgba(255, 182, 193, 0.7); }
+            50% { text-shadow: 0 0 50px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 192, 203, 0.8); }
+        }
+
+        .sub-title {
+            text-align: center;
+            color: #f0e6d2;
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1.5s;
+        }
+
+        /* Bó hoa chính */
+        .flower-bouquet {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 25px 20px;
+            margin: 60px 0 50px;
+            position: relative;
+            padding: 30px 15px;
+        }
+
+        /* Dây ruy băng trang trí */
+        .bouquet-ribbon {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 30px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493, #ff69b4);
+            border-radius: 15px;
+            filter: blur(8px);
+            opacity: 0.6;
+            z-index: 5;
+            animation: ribbonWave 4s ease-in-out infinite;
+        }
+
+        @keyframes ribbonWave {
+            0%, 100% { width: 200px; opacity: 0.6; }
+            50% { width: 250px; opacity: 0.8; }
+        }
+
+        .flower {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 130px;
+            cursor: pointer;
+            position: relative;
+            animation: floatFlower 4s ease-in-out infinite;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+        }
+
+        /* Mỗi hoa có độ cao float khác nhau */
+        .flower:nth-child(1) { animation-delay: 0s; }
+        .flower:nth-child(2) { animation-delay: 0.4s; }
+        .flower:nth-child(3) { animation-delay: 0.8s; }
+        .flower:nth-child(4) { animation-delay: 1.2s; }
+        .flower:nth-child(5) { animation-delay: 1.6s; }
+        .flower:nth-child(6) { animation-delay: 2.0s; }
+        .flower:nth-child(7) { animation-delay: 0.2s; }
+        .flower:nth-child(8) { animation-delay: 0.6s; }
+        .flower:nth-child(9) { animation-delay: 1.0s; }
+        .flower:nth-child(10) { animation-delay: 1.4s; }
+
+        @keyframes floatFlower {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(1deg); }
+            75% { transform: translateY(10px) rotate(-1deg); }
+        }
+
+        .flower:hover {
+            animation-play-state: paused;
+            transform: scale(1.15) translateY(-15px);
+            filter: drop-shadow(0 20px 25px rgba(255, 255, 255, 0.5));
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        /* Cánh hoa chính - nâng cấp */
+        .blossom {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background: currentColor;
+            border-radius: 60% 40% 50% 50%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4),
+                        0 0 0 2px rgba(255, 255, 255, 0.3) inset;
+            margin-bottom: -8px;
+            z-index: 3;
+            animation: blossomPulse 3s ease-in-out infinite;
+            transition: all 0.3s;
+        }
+
+        @keyframes blossomPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Cánh hoa phức tạp hơn */
+        .blossom::before,
+        .blossom::after {
+            content: '';
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            background: inherit;
+            border-radius: 50% 50% 30% 50%;
+            top: -25px;
+            left: 20px;
+            transform: rotate(45deg);
+            box-shadow: inherit;
+            filter: brightness(1.1);
+        }
+
+        .blossom::after {
+            top: 15px;
+            left: -20px;
+            transform: rotate(135deg);
+        }
+
+        /* Thêm cánh phụ */
+        .blossom .petal-side {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            background: inherit;
+            border-radius: 50%;
+            bottom: -15px;
+            right: -10px;
+            transform: rotate(20deg);
+            filter: brightness(0.9);
+            box-shadow: inherit;
+        }
+
+        .blossom .petal-side2 {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            background: inherit;
+            border-radius: 50%;
+            bottom: -15px;
+            left: -10px;
+            transform: rotate(-20deg);
+            filter: brightness(0.9);
+            box-shadow: inherit;
+        }
+
+        /* Nhụy hoa 3D */
+        .stamen {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            background: radial-gradient(circle at 30% 30%, #fff7b0, #ffb347, #ff8c00);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 0 0 20px #ffd700, 0 0 40px #ffa500;
+            animation: stamenGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes stamenGlow {
+            0%, 100% { box-shadow: 0 0 20px #ffd700, 0 0 40px #ffa500; }
+            50% { box-shadow: 0 0 30px #ffd700, 0 0 60px #ff8c00; }
+        }
+
+        /* Đài hoa chi tiết */
+        .sepal {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #2e7d32, #1b5e20, #2e7d32);
+            border-radius: 50% 50% 0 0;
+            transform: rotate(45deg);
+            margin-bottom: -5px;
+            z-index: 4;
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.3);
+            border: 1px solid #a5d6a7;
+        }
+
+        /* Thân hoa uốn lượn */
+        .stem {
+            width: 8px;
+            height: 120px;
+            background: linear-gradient(90deg, #2e7d32, #43a047, #2e7d32);
+            border-radius: 4px;
+            margin-top: -8px;
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+            position: relative;
+            z-index: 2;
+            transform: rotate(var(--rotate, 0deg));
+            animation: stemSway 5s ease-in-out infinite;
+        }
+
+        @keyframes stemSway {
+            0%, 100% { transform: rotate(-1deg); }
+            50% { transform: rotate(1deg); }
+        }
+
+        /* Lá chi tiết */
+        .stem::before,
+        .stem::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 15px;
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            border-radius: 70% 0 70% 0;
+            transform: rotate(35deg);
+            left: -18px;
+            top: 30px;
+            box-shadow: 0 0 10px #2e7d32;
+            border: 1px solid #81c784;
+            animation: leafWave 4s ease-in-out infinite;
+        }
+
+        .stem::after {
+            transform: rotate(-35deg);
+            left: auto;
+            right: -18px;
+            top: 60px;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes leafWave {
+            0%, 100% { transform: rotate(35deg) scale(1); }
+            50% { transform: rotate(45deg) scale(1.1); }
+        }
+
+        /* Lá gốc */
+        .leaf-base {
+            width: 50px;
+            height: 25px;
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+            border-radius: 80% 0 80% 0;
+            transform: rotate(5deg);
+            margin-top: -15px;
+            margin-bottom: -5px;
+            z-index: 1;
+            box-shadow: 0 8px 10px rgba(0,0,0,0.4);
+            border: 1px solid #81c784;
+            animation: baseLeafWave 6s ease-in-out infinite;
+        }
+
+        @keyframes baseLeafWave {
+            0%, 100% { transform: rotate(5deg) scale(1); }
+            50% { transform: rotate(10deg) scale(1.05); }
+        }
+
+        /* Giọt sương trên lá */
+        .dewdrop {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle at 30% 30%, #ffffff, #a5d6ff);
+            border-radius: 50%;
+            bottom: 15px;
+            right: 15px;
+            opacity: 0.8;
+            animation: dewdropShine 3s ease-in-out infinite;
+        }
+
+        @keyframes dewdropShine {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Màu sắc gradient cho hoa */
+        .flower-1 .blossom { background: radial-gradient(circle at 30% 30%, #FFB6C1, #FF69B4, #FF1493); }
+        .flower-2 .blossom { background: radial-gradient(circle at 30% 30%, #FFA07A, #FF4500, #DC143C); }
+        .flower-3 .blossom { background: radial-gradient(circle at 30% 30%, #FFFACD, #FFD700, #FFA500); }
+        .flower-4 .blossom { background: radial-gradient(circle at 30% 30%, #FFE4B5, #FF8C00, #FF4500); }
+        .flower-5 .blossom { background: radial-gradient(circle at 30% 30%, #E6E6FA, #9370DB, #8A2BE2); }
+        .flower-6 .blossom { background: radial-gradient(circle at 30% 30%, #FFB6C1, #FF69B4, #C71585); }
+        .flower-7 .blossom { background: radial-gradient(circle at 30% 30%, #E0FFFF, #40E0D0, #00CED1); }
+        .flower-8 .blossom { background: radial-gradient(circle at 30% 30%, #DDA0DD, #DA70D6, #BA55D3); }
+        .flower-9 .blossom { background: radial-gradient(circle at 30% 30%, #FFDAB9, #FFA07A, #FA8072); }
+        .flower-10 .blossom { background: radial-gradient(circle at 30% 30%, #F0FFF0, #98FB98, #32CD32); }
+
+        .message-section {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 70px;
+            padding: 40px 30px;
+            margin: 30px 0;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            backdrop-filter: blur(5px);
+            animation: glowBorder 3s ease-in-out infinite;
+        }
+
+        @keyframes glowBorder {
+            0%, 100% { border-color: rgba(255, 215, 0, 0.2); }
+            50% { border-color: rgba(255, 215, 0, 0.6); }
+        }
+
+        .message {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff5e6;
+            text-shadow: 3px 3px 0 #8B4513, 0 0 20px #ff69b4;
+            margin-bottom: 30px;
+            line-height: 1.4;
+            animation: textShake 3s ease-in-out infinite;
+        }
+
+        @keyframes textShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .message span {
+            display: inline-block;
+            background: linear-gradient(145deg, #FFD700, #FFA500, #FF69B4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3rem;
+            animation: rainbowText 4s linear infinite;
+        }
+
+        @keyframes rainbowText {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .meaning-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px 30px;
+            margin-top: 30px;
+        }
+
+        .meaning-item {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            padding: 12px 25px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            color: #fff9e6;
+            font-weight: 600;
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            animation: itemFloat 3s ease-in-out infinite;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .meaning-item:nth-child(1) { animation-delay: 0s; border-color: #FF69B4; }
+        .meaning-item:nth-child(2) { animation-delay: 0.3s; border-color: #FF4500; }
+        .meaning-item:nth-child(3) { animation-delay: 0.6s; border-color: #FFD700; }
+        .meaning-item:nth-child(4) { animation-delay: 0.9s; border-color: #FF8C00; }
+        .meaning-item:nth-child(5) { animation-delay: 1.2s; border-color: #9370DB; }
+        .meaning-item:nth-child(6) { animation-delay: 1.5s; border-color: #FF1493; }
+        .meaning-item:nth-child(7) { animation-delay: 1.8s; border-color: #00CED1; }
+        .meaning-item:nth-child(8) { animation-delay: 2.1s; border-color: #DA70D6; }
+
+        @keyframes itemFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .meaning-item:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 0 30px currentColor;
+            border-color: gold;
+        }
+
+        .meaning-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -50%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        .footer {
+            text-align: right;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffdab9;
+            margin-top: 30px;
+            padding-right: 30px;
+            text-shadow: 0 0 20px gold, 0 0 40px #ff69b4;
+            letter-spacing: 2px;
+            animation: footerGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes footerGlow {
+            0%, 100% { text-shadow: 0 0 20px gold, 0 0 40px #ff69b4; }
+            50% { text-shadow: 0 0 40px gold, 0 0 60px #ff1493; }
+        }
+
+        .footer small {
+            font-size: 1.2rem;
+            color: #ffe4c4;
+            display: block;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            h1 { font-size: 3rem; }
+            .flower { width: 100px; }
+            .blossom { width: 80px; height: 80px; }
+            .blossom::before, .blossom::after { width: 45px; height: 45px; }
+            .stem { height: 100px; }
+            .message { font-size: 2rem; }
+        }
+
+        @media (max-width: 500px) {
+            .flower { width: 80px; }
+            .meaning-item { font-size: 0.9rem; padding: 8px 15px; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tạo hiệu ứng tuyết rơi và sao băng bằng JavaScript -->
+    <div id="snowflakes-container"></div>
+    <div id="sparkles-container"></div>
+
+    <div class="card">
+        <h1>🌸 8·3·2026 🌸</h1>
+        <div class="sub-title">✨ Bó hoa của muôn vàn yêu thương ✨</div>
+        
+        <!-- Bó hoa với dây ruy băng -->
+        <div class="flower-bouquet">
+            <div class="bouquet-ribbon"></div>
+            
+            <!-- 10 bông hoa với hiệu ứng và màu sắc khác nhau -->
+            <div class="flower flower-1">
+                <div class="blossom">
+                    <div class="stamen"></div>
+                    <div class="petal-side"></div>
+                    <div class="petal-side2"></div>
+                </div>
+                <div class="sepal"></div>
+                <div class="stem" style="--rotate: -1deg;">
+                    <div class="dewdrop"></div>
+                </div>
+                <div class="leaf-base"></div>
+            </div>
+
+            <div class="flower flower-2">
+                <div class="blossom">
+                    <div class="stamen"></div>
+                    <div class="petal-side"></div>
+                    <div class="petal-side2"></div>
+                </div>
+                <div class="sepal"></div>
+                <div class="stem" style="--rotate: 0deg;">
+                    <div class="dewdrop"></div>
+                </div>
+                <div class="leaf-base"></div>
+            </div>
+
+            <div class="flower flower-3">
+                <div class="blossom">
+                    <div class="stamen"></div>
+                    <div class="petal-side"></div>
+                    <div class="petal-side2"></div>
+                </div>
+                <div class="sepal"></div>
+                <div class="stem" style="--rotate: 1deg;">
+                    <div class="dewdrop"></div>
+                </div>
+                <div class="leaf-base"></div>
+            </div>
+
+            <div class="flower flower-4">
+                <div class="blossom">
+                    <div class="stamen"></div>
+                    <div class="petal-side"></div>
+                    <div class="petal-side2"></div>
+                </div>
+                <div class="sepal"></div>
+                <div class="stem" style="--rotate: -0.5deg;">
+                    <div class="dewdrop"></div>
+                </div>
+                <div class="leaf-base"></div>
+            </div>
+
+            <div class="flower flower-5">
+                <div class="blossom">
+                    <div class="stamen"></div>
+                    <div class="petal-side"></div>
+                    <div class="petal-side2"></div>
+                </div>
+                <div class="sepal"></div>
+                <div class="stem" style="--rotate: 0.5deg;">
+                    <div class="dewdrop"></div>
+                </div>
+                <div class="leaf-base"></div>
+            </div>
+
+            <div class="flower flower-6">
+                <div class="blossom">
+                    <div class="stamen"></div>
+                    <div class="petal-side"></div>
+                    <div class="petal-side2"></div>
+                </div>
+                <div class="sepal"></div>
+                <div class="stem" style="--rotate: -0.8deg;">
+                    <div class="dewdrop"></div>
+                </div>
+                <div class="leaf-base"></div>
+            </div>
+
+            <div class="flower flower-7">
+                <div class="blossom">
+                    <div class="stamen"></div>
+                    <div class="petal-side"></div>
+                    <div class="petal-side2"></div>
+                </div>
+                <div class="sepal"></div>
+                <div class="stem" style="--rotate: 0.8deg;">
+                    <div class="dewdrop"></div>
+                </div>
+                <div class="leaf-base"></div>
+            </div>
+
+            <div class="flower flower-8">
+                <div class="blossom">
+                    <div class="stamen"></div>
+                    <div class="petal-side"></div>
+                    <div class="petal-side2"></div>
+                </div>
+                <div class="sepal"></div>
+                <div class="stem" style="--rotate: -0.3deg;">
+                    <div class="dewdrop"></div>
+                </div>
+                <div class="leaf-base"></div>
+            </div>
+
+            <div class="flower flower-9">
+                <div class="blossom">
+                    <div class="stamen"></div>
+                    <div class="petal-side"></div>
+                    <div class="petal-side2"></div>
+                </div>
+                <div class="sepal"></div>
+                <div class="stem" style="--rotate: 0.3deg;">
+                    <div class="dewdrop"></div>
+                </div>
+                <div class="leaf-base"></div>
+            </div>
+
+            <div class="flower flower-10">
+                <div class="blossom">
+                    <div class="stamen"></div>
+                    <div class="petal-side"></div>
+                    <div class="petal-side2"></div>
+                </div>
+                <div class="sepal"></div>
+                <div class="stem" style="--rotate: -0.2deg;">
+                    <div class="dewdrop"></div>
+                </div>
+                <div class="leaf-base"></div>
+            </div>
+        </div>
+
+        <div class="message-section">
+            <div class="message">
+                🌷 <span>Chúc mừng 8/3</span> 🌷<br>
+                Mỗi sắc hoa - Một lời chúc yêu thương - Hôm qua em nói em thích màu xanh, cũng thích được tặng hoa - Mỗi màu đều có ý nghĩa của riêng nó, riêng anh cảm nhận được ở em mọi thứ đều hoàn hảo nên anh dành tặng cho em những gì ý nghĩa nhất.
+            </div>
+            
+            <div class="meaning-list">
+                <span class="meaning-item">🌸 Hồng: Yêu thương ngọt ngào</span>
+                <span class="meaning-item">🌺 Đỏ cam: Đam mê cháy bỏng</span>
+                <span class="meaning-item">🌻 Vàng: Hạnh phúc viên mãn</span>
+                <span class="meaning-item">🌼 Cam: Sáng tạo & thành công</span>
+                <span class="meaning-item">🪻 Tím: Chung thủy sắc son</span>
+                <span class="meaning-item">💗 Hồng đậm: Lòng biết ơn</span>
+                <span class="meaning-item">💙 Xanh ngọc: Hy vọng & bình an</span>
+                <span class="meaning-item">🌸 Tím lavender: Duyên dáng thanh lịch</span>
+            </div>
+            <p style="color: #ffdbc4; margin-top: 30px; font-size: 1.3rem; font-style: italic; animation: fadeIn 2s;">
+                ✨ Mười sắc hoa khoe sắc - Ngàn lời chúc yêu thương ✨
+            </p>
+        </div>
+
+        <div class="footer">
+            8·3·2026 <small>♥ Gặp được em là chuyện đẹp nhất ở nhân gian, được ở bên em là điều may mắn nhất của anh. Ngày 8/3, chúc người con gái anh yêu luôn xinh đẹp như hoa, dịu dàng như nước. ♥</small>
+        </div>
+    </div>
+
+    <script>
+        // Tạo hiệu ứng tuyết rơi
+        function createSnowflakes() {
+            const container = document.getElementById('snowflakes-container');
+            for (let i = 0; i < 30; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.innerHTML = ['❄️', '🌸', '✨', '💫', '🌺'][Math.floor(Math.random() * 5)];
+                snowflake.style.left = Math.random() * 100 + '%';
+                snowflake.style.animationDuration = (Math.random() * 10 + 5) + 's';
+                snowflake.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                snowflake.style.opacity = Math.random() * 0.8 + 0.2;
+                container.appendChild(snowflake);
+            }
+        }
+
+        // Tạo hiệu ứng lấp lánh
+        function createSparkles() {
+            const container = document.getElementById('sparkles-container');
+            for (let i = 0; i < 40; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 3 + 's';
+                sparkle.style.backgroundColor = `hsl(${Math.random() * 60 + 300}, 100%, 70%)`;
+                container.appendChild(sparkle);
+            }
+        }
+
+        // Khởi tạo hiệu ứng
+        createSnowflakes();
+        createSparkles();
+
+        // Hiệu ứng khi click vào hoa
+        document.querySelectorAll('.flower').forEach((flower, index) => {
+            flower.addEventListener('click', function(e) {
+                const meanings = [
+                    '🌸 Hồng: Tình yêu ngọt ngào và lãng mạn!',
+                    '🌺 Đỏ cam: Đam mê và nhiệt huyết!',
+                    '🌻 Vàng: Hạnh phúc và thịnh vượng!',
+                    '🌼 Cam: Sáng tạo và thành công!',
+                    '🪻 Tím: Thủy chung và son sắt!',
+                    '💗 Hồng đậm: Lòng biết ơn sâu sắc!',
+                    '💙 Xanh ngọc: Hy vọng và bình an!',
+                    '🌸 Tím lavender: Duyên dáng và thanh lịch!',
+                    '🌷 Hồng phấn: Dịu dàng và tinh tế!',
+                    '🌿 Xanh lá: Sức sống tươi mới!'
+                ];
+                
+                // Tạo hiệu ứng pháo hoa nhỏ khi click
+                for (let i = 0; i < 8; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'fixed';
+                    particle.style.left = e.clientX + 'px';
+                    particle.style.top = e.clientY + 'px';
+                    particle.style.width = '8px';
+                    particle.style.height = '8px';
+                    particle.style.borderRadius = '50%';
+                    particle.style.background = `hsl(${Math.random() * 360}, 100%, 60%)`;
+                    particle.style.pointerEvents = 'none';
+                    particle.style.zIndex = '9999';
+                    particle.style.transition = 'all 1s ease-out';
+                    document.body.appendChild(particle);
+                    
+                    setTimeout(() => {
+                        particle.style.transform = `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px)`;
+                        particle.style.opacity = '0';
+                    }, 10);
+                    
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 1000);
+                }
+                
+                alert(`✨ ${meanings[index % meanings.length]} ✨\n\nChúc Bé iu luôn xinh đẹp và hạnh phúc!`);
+            });
+        });
+
+        // Hiệu ứng rung động khi tải trang
+        window.addEventListener('load', () => {
+            const flowers = document.querySelectorAll('.flower');
+            flowers.forEach((flower, i) => {
+                setTimeout(() => {
+                    flower.style.animation = 'none';
+                    flower.offsetHeight;
+                    flower.style.animation = 'floatFlower 4s ease-in-out infinite';
+                }, i * 100);
+            });
+        });
+
+        // Thêm hiệu ứng chuột di chuyển
+        document.addEventListener('mousemove', (e) => {
+            const flowers = document.querySelectorAll('.flower');
+            flowers.forEach(flower => {
+                const rect = flower.getBoundingClientRect();
+                const flowerX = rect.left + rect.width / 2;
+                const flowerY = rect.top + rect.height / 2;
+                const distance = Math.sqrt(Math.pow(e.clientX - flowerX, 2) + Math.pow(e.clientY - flowerY, 2));
+                
+                if (distance < 150) {
+                    const angle = Math.atan2(e.clientY - flowerY, e.clientX - flowerX);
+                    const moveX = Math.cos(angle) * 5;
+                    const moveY = Math.sin(angle) * 5;
+                    flower.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+                } else {
+                    flower.style.transform = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
